@@ -1,0 +1,31 @@
+﻿@using lab2.Models.View;
+@using lab2.Models.Domain;
+@model TicketVM;
+
+
+<a asp-action="Index">Back to list of tickets</a>
+
+<form asp-action="Add" method="post">
+
+	<div class="form-group">
+		<label asp-for="Description"></label>
+		<input class="form-control" asp-for="Description" />
+	</div>
+	<br />
+
+	<div class="form-group">
+		<input class="form-check-input" asp-for="IsClosed" />
+		<label asp-for="IsClosed"></label>
+	</div>
+	<br />
+
+	<div class="form-group">
+		<label asp-for="Severity"></label>
+		<select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severitys>()"></select>
+	</div>
+	<br />
+
+	<div class="form-group">
+	<button class="btn btn-dark"> Submit </button>
+	</div>
+</form>

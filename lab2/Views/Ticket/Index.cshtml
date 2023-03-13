@@ -1,0 +1,18 @@
+﻿@using lab2.Models.Domain;
+@model List<Ticket>;
+
+<a asp-action="Add">Add a new item</a>
+
+<div class="container">
+    @foreach (var ticket in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5>@ticket.CreatedDate</h5>
+                <h5>@ticket.IsClosed</h5>
+                <h5>@ticket.Description</h5>
+                <h6>@ticket.Severity</h6>
+            </div>
+        </div>
+    }
+</div>
