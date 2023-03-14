@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace lab2.Models.View;
 
-public record TicketVM
+public record EditTicketVM
 {
     public Guid Id { get; set; }
     [Display(Name = "Is Closed")]
@@ -13,9 +13,8 @@ public record TicketVM
     public string Description { get; init; } = string.Empty;
 
     [Display(Name = "Department")]
-    public Guid DepartmentId { get; init; } 
+    public Guid DepartmentId { get; init; }
 
     [Display(Name = "Assignees")]
-    public List<Guid> DevelopersIds { get; init; } = new(); 
-
+    public List<Guid> DevelopersIds { get; init; } = new();
 }

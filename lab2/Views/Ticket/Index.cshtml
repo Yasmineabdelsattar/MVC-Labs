@@ -1,16 +1,32 @@
 ﻿@using lab2.Models.Domain;
+@using lab2.Models.View;
 @model List<Ticket>;
+@using System.Text.Json;
 
 <a asp-action="Add">Add a new item</a>
+@{
+    var authorsJson = JsonSerializer.Serialize(Model);
+}
+
+<pre>
+    @authorsJson
+</pre>
+
+
+
+
 
 <div class="container">
     @foreach (var ticket in Model)
     {
         <div class="card" style="width: 18rem;">
             <div class="card-body">
+                <h5>@ticket.Id</h5>
                 <h5>@ticket.CreatedDate</h5>
                 <h5>@ticket.IsClosed</h5>
                 <h5>@ticket.Description</h5>
+                <h5>@ticket.Developers</h5>
+                <h5>@ticket.Department.Name</h5>
                 <h6>@ticket.Severity</h6>
             </div>
         </div>

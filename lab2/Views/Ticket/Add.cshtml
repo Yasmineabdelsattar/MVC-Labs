@@ -2,6 +2,9 @@
 @using lab2.Models.Domain;
 @model TicketVM;
 
+@{
+	var departments = ViewData["Departments"] as IEnumerable<SelectListItem> ?? new List<SelectListItem>(); ViewData["Title"] = "Edit";
+}
 
 <a asp-action="Index">Back to list of tickets</a>
 
@@ -24,6 +27,16 @@
 		<select asp-for="Severity" asp-items="Html.GetEnumSelectList<Severitys>()"></select>
 	</div>
 	<br />
+
+	<div class="form-group">
+		<label asp-for="DepartmentId"></label>
+		<select asp-for="DepartmentId" asp-items="departments"></select>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="DevelopersIds"></label>
+		<select asp-for="DevelopersIds" asp-items="ViewBag.awardsListItems"></select>
+	</div>
 
 	<div class="form-group">
 	<button class="btn btn-dark"> Submit </button>
