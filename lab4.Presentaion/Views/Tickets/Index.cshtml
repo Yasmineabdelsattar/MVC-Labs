@@ -1,0 +1,23 @@
+﻿@using lab4.BL.ViewModels;
+@using System.Text.Json;
+@model List<TicketReadVM>;
+
+
+<a asp-action="Add">Add a new item</a>
+
+<div class="container">
+    @foreach (var ticket in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5>@ticket.Id</h5>
+                <h5>@ticket.Title</h5>
+                <h5>@ticket.Description</h5>
+                <h6>@ticket.Severity</h6>
+            </div>
+            <form action="Tickets/Delete/@ticket.Id" method="post">
+            <button class="btn btn-dark"> Delete </button>
+            </form>
+        </div>
+    }
+</div>
