@@ -1,0 +1,26 @@
+﻿@using Lab5.BL.ViewModels;
+@using Lab5.BL.ViewModels.Ticket;
+@model TicketDetailsVM
+
+@{
+    var ticket = Model;
+}
+
+<h2>Ticket Details</h2>
+<dl>
+    <dt>Id</dt>
+    <dd>@ticket.Id</dd>
+
+    <dt>Name</dt>
+    <dd>@ticket.Description</dd>
+
+    <dt>@Html.DisplayNameFor(m=>m.DepartmentName)</dt>
+    <dd>@ticket.DepartmentName</dd>
+
+    @*<dt>Doctor's Specialization</dt>
+    <dd>@ticket.DoctorSpecialization</dd>*@
+
+    <dt>No. of Developers</dt>
+    <dd>@ticket.DevelopersCount</dd>
+</dl>
+

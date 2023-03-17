@@ -1,0 +1,21 @@
+﻿@using Lab5.BL.ViewModels.Ticket;
+@model TicketEditVM;
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+    </div>
+
+    <div>
+        <label asp-for="DepartmentId"></label>
+        <select asp-for="DepartmentId" asp-items="ViewBag.Departments"></select>
+    </div>
+
+
+    <div>
+        <label asp-for="DevelopersIds"></label>
+        <select asp-for="DevelopersIds" asp-items="ViewBag.Developers"></select>
+    </div>
+    <button class="btn btn-success">Submit</button>
+</form>
