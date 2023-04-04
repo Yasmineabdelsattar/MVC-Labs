@@ -35,14 +35,17 @@ public class TicketsManager: ITicketsManager
         return new TicketReadVM(ticketFromDB.Id, ticketFromDB.Title, ticketFromDB.Description, ticketFromDB.Severity);
     }
 
+   
     public void Add(TicketAddVM ticketVM)
     {
+        
         var ticket = new Ticket
-        {
+          {
             Title = ticketVM.Title,
             Description = ticketVM.Description,
             Severity = ticketVM.Severity
-        };
+          };
+        
 
         _ticketsRepo.Add(ticket);
         _ticketsRepo.SaveChanges();
